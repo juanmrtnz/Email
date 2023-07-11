@@ -1,0 +1,30 @@
+{% extends "mail/layout.html" %}
+
+{% block body %}
+
+    <div id="pageTitle">
+        Register
+    </div>
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <input class="logForm-textbox" type="email" name="email" placeholder="Email address">
+        </div>
+        <div>
+            <input class="logForm-textbox" type="password" name="password" placeholder="Password">
+        </div>
+        <div>
+            <input class="logForm-textbox" type="password" name="confirmation" placeholder="Confirm password">
+        </div>
+        {% if message %}
+            <div id="log-errorMessage">
+                {{ message }}
+            </div>
+        {% endif %}
+        <input id="logForm-button" type="submit" value="Register">
+    </form>
+
+    Already have an account? <a href="{% url 'login' %}">Log in here</a>.
+
+{% endblock %}

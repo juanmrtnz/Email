@@ -1,0 +1,259 @@
+/* Content common to all pages */
+
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: aliceblue;
+}
+
+body, input, textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    color: rgb(0, 123, 255);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(0, 105, 217);
+    text-decoration: underline;
+}
+
+#pageTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+/* Navigation bar */
+
+#navbar-title {
+    padding: 10px 0px 10px 40px;
+    font-size: 25px;
+    background-image: url(favicon_mail.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#navbar-buttons {
+    display: flex;
+}
+
+.navbar-button {
+    margin-right: 5px;
+    padding: 2px 7px 2px 7px;
+    font-size: 16px;
+    color: rgb(0, 123, 255);
+    border: 1px solid rgb(0, 123, 255);
+    border-radius: 3px;
+    background-color: aliceblue;
+}
+
+.navbar-button:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 123, 255);
+}
+
+.navbar-button:focus {
+    box-shadow: 0 0 0px 3px rgb(100, 175, 255);
+    outline: none;
+}
+
+/* Emails in list */
+
+.emailList-emailRead, .emailList-emailUnread {
+    position: relative;
+    display: flex;
+    height: 35px;
+    min-width: 600px;
+    margin-top: -1px;
+    padding: 4px 0px 3px 10px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 3px;
+}
+
+.emailList-emailRead:hover, .emailList-emailUnread:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 1px rgb(78, 78, 78);
+    z-index: 1;
+}
+
+.emailList-emailRead {
+    background-color: rgb(238, 238, 238);
+}
+
+.emailList-emailUnread {
+    font-weight: bold;
+    background-color: white;
+}
+
+.emailList-sender, .emailList-subject, .emailList-body, .emailList-timestamp {
+    margin-right: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.emailList-sender {
+    min-width: 200px;
+    padding-top: 2px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.emailList-subject {
+    min-width: 150px;
+    max-width: 300px;
+}
+
+.emailList-body {
+    min-width: 150px;
+    max-width: 400px;
+    padding-top: 2px;
+    color: rgb(74, 74, 74);
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.emailList-timestamp {
+    min-width: fit-content;
+    margin-left: auto;
+    padding-top: 3px;
+    font-size: 13px;
+}
+
+@media (max-width: 760px) {
+    .emailList-subject {
+        width: 150px;
+    }
+}
+
+@media (max-width: 900px) {
+    .emailList-sender {
+        width: 150px;
+    }
+    .emailList-timestamp {
+        display: none;
+    }
+}
+
+/* Email in email page */
+
+.emailPage-sender_timestamp {
+    display: flex;
+}
+
+#emailPage-sender {
+    margin-top: 3px;
+    margin-right: 70px;
+    font-weight: bold;
+}
+
+#emailPage-timestamp {
+    margin-top: 5px;
+    color: rgb(100, 100, 100);
+    font-size: 13px;
+}
+
+.emailPage-recipients {
+    color: rgb(100, 100, 100);
+    font-size: 12px;
+}
+
+.emailPage-subject {
+    margin-top: 30px;
+    margin-bottom: -10px;
+    font-size: 25px;
+    overflow-wrap: break-word;
+}
+
+.emailPage-body {
+    width: auto;
+    height: fit-content;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    overflow-wrap: break-word;
+}
+
+.emailPage-replyButton, .emailPage-archiveUnarchiveButton {
+    padding: 6px 12px 6px 40px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 10px;
+    background-size: 20px;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.emailPage-replyButton {
+    margin-right: 30px;
+    background-image: url(reply_icon.png);
+}
+
+.emailPage-archiveUnarchiveButton {
+    background-image: url(archive_icon.png);
+}
+
+.emailPage-replyButton:hover, .emailPage-archiveUnarchiveButton:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 1px rgb(78, 78, 78);
+    z-index: 1;
+}
+
+/* Forms */
+
+.logForm-textbox, .composeForm-textbox {
+    height: 35px;
+    margin-bottom: 15px;
+    padding: 0px 10px 0px 10px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 3px;
+}
+
+.logForm-textbox {
+    width: 400px;
+}
+
+.logForm-textbox:focus {
+    border: 1px solid rgb(97, 176, 255);
+    box-shadow: 0 0 1px 3px rgb(178, 216, 255);
+    outline: none;
+}
+
+#log-errorMessage {
+    color: red;
+    margin-bottom: 15px;
+}
+
+#logForm-button, #composeForm-button {
+    margin-bottom: 30px;
+    padding: 6px 12px 6px 12px;
+    color: white;
+    border: 1px solid rgb(97, 176, 255);
+    border-radius: 4px;
+    background-color: rgb(0, 123, 255);
+}
+
+#logForm-button:hover, #composeForm-button:hover {
+    cursor: pointer;
+}
+
+
+.composeForm-textbox {
+    width: 700px;
+}
+
+#composeForm-textboxDiv {
+    color: rgb(230, 230, 230);
+}
+
+#compose-body {
+    height: 300px;
+    padding-top: 5px;
+}
